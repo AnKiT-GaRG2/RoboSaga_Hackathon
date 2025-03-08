@@ -33,6 +33,108 @@
                 "NOT SPEAKING": 39,
                 "SPEAKING": 21
             }
+        },
+        "2025-03-08T05:20:15.123456": {
+            "employee_id": 1,
+            "timestamp": "2025-03-08T05:20:10.654321",
+            "window_activity": {
+                "Code Editor": {
+                    "time_spent": 90,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 45,
+                            "text": "function calculateSum(a, b) { return a + b; }"
+                        },
+                        "mouse_movement_distance": {
+                            "count": 1200,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 10,
+                            "text": "Clicked on Run"
+                        },
+                        "mouse_scrolls": {
+                            "count": 5,
+                            "text": "Scrolled through code"
+                        }
+                    }
+                }
+            },
+            "activity_summary": {
+                "eyes_open_time": 85,
+                "eyes_closed_time": 3,
+                "eyes_not_detected_time": 2,
+                "NOT SPEAKING": 50,
+                "SPEAKING": 10
+            }
+        },
+        "2025-03-08T06:10:45.789123": {
+            "employee_id": 1,
+            "timestamp": "2025-03-08T06:10:40.987654",
+            "window_activity": {
+                "Browser": {
+                    "time_spent": 120,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 25,
+                            "text": "Searched for AI research papers"
+                        },
+                        "mouse_movement_distance": {
+                            "count": 900,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 15,
+                            "text": "Opened multiple tabs"
+                        },
+                        "mouse_scrolls": {
+                            "count": 20,
+                            "text": "Scrolled through articles"
+                        }
+                    }
+                }
+            },
+            "activity_summary": {
+                "eyes_open_time": 100,
+                "eyes_closed_time": 10,
+                "eyes_not_detected_time": 10,
+                "NOT SPEAKING": 80,
+                "SPEAKING": 40
+            }
+        },
+        "2025-03-08T07:45:30.654321": {
+            "employee_id": 1,
+            "timestamp": "2025-03-08T07:45:25.321098",
+            "window_activity": {
+                "Video Call": {
+                    "time_spent": 180,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 5,
+                            "text": "Typed meeting notes"
+                        },
+                        "mouse_movement_distance": {
+                            "count": 400,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 8,
+                            "text": "Muted/unmuted microphone"
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                }
+            },
+            "activity_summary": {
+                "eyes_open_time": 160,
+                "eyes_closed_time": 5,
+                "eyes_not_detected_time": 15,
+                "NOT SPEAKING": 30,
+                "SPEAKING": 150
+            }
         }
     }
 }

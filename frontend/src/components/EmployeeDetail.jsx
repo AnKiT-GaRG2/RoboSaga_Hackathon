@@ -29,7 +29,7 @@ export default function EmployeeDetail() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/employee/${id}`);
+        const response = await axios.get(`http://localhost:5000/employee/${1}`);
         setData(response.data);
 
         const activityData = response.data?.data;
@@ -40,19 +40,23 @@ export default function EmployeeDetail() {
             productivity: calculateProductivity(details.activity_summary),
             
           }));
-          setProductivityGraphData(graphData);
+          setProductivityGraphData(prev => [...prev, ...graphData].slice(-50));
 
           const mouseWindowData = Object.entries(activityData).flatMap(([date, details]) =>
             Object.entries(details.window_activity).map(([window, activity]) => ({
               date,
               window,
               keyboardActivity: activity.activities.keyboard_activity.count,
+              keyboardText: activity.activities.keyboard_activity.text,  // Extract text
               mouseClicks: activity.activities.mouse_clicks.count,
+              mouseClicksText: activity.activities.mouse_clicks.text,   // Extract text
               mouseMovements: activity.activities.mouse_movement_distance.count,
               mouseScrolls: activity.activities.mouse_scrolls.count,
+              timeSpent: activity.time_spent,  // Add time spent in each window
             }))
           );
           setWindowMouseData(mouseWindowData);
+          
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -94,20 +98,24 @@ export default function EmployeeDetail() {
 
         {/* Window and Mouse Activities */}
         {windowMouseData.length > 0 && (
-          <div className="w-full bg-gray-100 p-4 rounded-lg my-6">
-            <h3 className="text-lg font-medium text-gray-700 mb-2">Window and Mouse Activities</h3>
-            {windowMouseData.map((entry, index) => (
-              <div key={index} className="mb-4">
-                <p><strong>Date:</strong> {entry.date}</p>
-                <p><strong>Window:</strong> {entry.window}</p>
-                <p><strong>Keyboard Activity:</strong> {entry.keyboardActivity}</p>
-                <p><strong>Mouse Clicks:</strong> {entry.mouseClicks}</p>
-                <p><strong>Mouse Movements:</strong> {entry.mouseMovements}</p>
-                <p><strong>Mouse Scrolls:</strong> {entry.mouseScrolls}</p>
-              </div>
-            ))}
-          </div>
-        )}
+  <div className="w-full bg-gray-100 p-4 rounded-lg my-6">
+    <h3 className="text-lg font-medium text-gray-700 mb-2">Window and Mouse Activities</h3>
+    {windowMouseData.map((entry, index) => (
+      <div key={index} className="mb-4 p-4 bg-white shadow rounded-lg">
+        <p><strong>Date:</strong> {entry.date}</p>
+        <p><strong>Window:</strong> {entry.window}</p>
+        <p><strong>Time Spent:</strong> {entry.timeSpent} sec</p>
+        <p><strong>Keyboard Activity:</strong> {entry.keyboardActivity}</p>
+        {entry.keyboardText && <p className="text-blue-500"><strong>Keyboard Text:</strong> {entry.keyboardText}</p>}
+        <p><strong>Mouse Clicks:</strong> {entry.mouseClicks}</p>
+        {entry.mouseClicksText && <p className="text-blue-500"><strong>Mouse Click Text:</strong> {entry.mouseClicksText}</p>}
+        <p><strong>Mouse Movements:</strong> {entry.mouseMovements}</p>
+        <p><strong>Mouse Scrolls:</strong> {entry.mouseScrolls}</p>
+      </div>
+    ))}
+  </div>
+)}
+
 
         {/* Productivity Graph */}
         <div className="bg-gray-100 p-4 rounded-lg">
