@@ -40,7 +40,7 @@ export default function EmployeeDetail() {
             productivity: calculateProductivity(details.activity_summary),
             
           }));
-          setProductivityGraphData(prev => [...prev, ...graphData].slice(-50));
+          setProductivityGraphData(prev => [...prev, ...graphData].slice(-5));
 
           const mouseWindowData = Object.entries(activityData).flatMap(([date, details]) =>
             Object.entries(details.window_activity).map(([window, activity]) => ({
@@ -102,7 +102,7 @@ export default function EmployeeDetail() {
     <h3 className="text-lg font-medium text-gray-700 mb-2">Window and Mouse Activities</h3>
     {windowMouseData.map((entry, index) => (
       <div key={index} className="mb-4 p-4 bg-white shadow rounded-lg">
-        <p><strong>Date:</strong> {entry.date}</p>
+        <p><strong>Date:</strong> {entry.date} </p>
         <p><strong>Window:</strong> {entry.window}</p>
         <p><strong>Time Spent:</strong> {entry.timeSpent} sec</p>
         <p><strong>Keyboard Activity:</strong> {entry.keyboardActivity}</p>

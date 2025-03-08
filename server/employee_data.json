@@ -38,7 +38,7 @@
             "employee_id": 1,
             "timestamp": "2025-03-08T05:20:10.654321",
             "window_activity": {
-                "Code Editor": {
+                "sum.cpp": {
                     "time_spent": 90,
                     "activities": {
                         "keyboard_activity": {
@@ -50,8 +50,8 @@
                             "text": ""
                         },
                         "mouse_clicks": {
-                            "count": 10,
-                            "text": "Clicked on Run"
+                            "count": 1,
+                            "text": "L"
                         },
                         "mouse_scrolls": {
                             "count": 5,
@@ -72,20 +72,20 @@
             "employee_id": 1,
             "timestamp": "2025-03-08T06:10:40.987654",
             "window_activity": {
-                "Browser": {
+                "Youtube": {
                     "time_spent": 120,
                     "activities": {
                         "keyboard_activity": {
                             "count": 25,
-                            "text": "Searched for AI research papers"
+                            "text": "AI research papers"
                         },
                         "mouse_movement_distance": {
                             "count": 900,
                             "text": ""
                         },
                         "mouse_clicks": {
-                            "count": 15,
-                            "text": "Opened multiple tabs"
+                            "count": 5,
+                            "text": "LLLLR"
                         },
                         "mouse_scrolls": {
                             "count": 20,
@@ -106,12 +106,12 @@
             "employee_id": 1,
             "timestamp": "2025-03-08T07:45:25.321098",
             "window_activity": {
-                "Video Call": {
+                "MEET": {
                     "time_spent": 180,
                     "activities": {
                         "keyboard_activity": {
                             "count": 5,
-                            "text": "Typed meeting notes"
+                            "text": "Meeting notes"
                         },
                         "mouse_movement_distance": {
                             "count": 400,
@@ -119,7 +119,7 @@
                         },
                         "mouse_clicks": {
                             "count": 8,
-                            "text": "Muted/unmuted microphone"
+                            "text": "LLLLLLLL"
                         },
                         "mouse_scrolls": {
                             "count": 0,
